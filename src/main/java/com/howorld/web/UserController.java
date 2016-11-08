@@ -83,7 +83,7 @@ public class UserController {
 		/*
 		User sessionedUser = (User)tempUser;
 		User user = userRepository.findOne(sessionedUser.getId());
-		*/
+		*/		
 		model.addAttribute("user", user);
 		return "/user/updateForm";
 	}
