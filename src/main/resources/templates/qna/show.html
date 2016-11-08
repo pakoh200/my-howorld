@@ -83,7 +83,7 @@
                               </div>
                           </article>
                           {{/answers}}
-                          <form class="submit-write" method="post" action="/questions/{{id}}/answers">
+                          <form class="answer-write" method="post" action="/api/questions/{{id}}/answers">
                               <div class="form-group" style="padding:14px;">
                                   <textarea class="form-control" placeholder="Update your status" name="contents"></textarea>
                               </div>
@@ -95,6 +95,7 @@
               </div>
           </div>
         </div>
+        {{/question}}
     </div>
 </div>
 <script type="text/template" id="answerTemplate">
@@ -124,8 +125,8 @@
 			</li>
 		</ul>
 		</div>
-	{{/question}}
 	</article>
+</script>
 </script>
 {{> /include/footer}}
 	</body>

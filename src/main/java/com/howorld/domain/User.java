@@ -5,17 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity//database 연결 에너테이션
 public class User {
 	@Id//primary key
 	@GeneratedValue//자동증가
+	@JsonProperty
 	private Long id;
 	
 	@Column(nullable=false, length=20, unique=true)
+	@JsonProperty
 	private String userId;
 	
+	@JsonIgnore
 	private String password;
+	
+	@JsonProperty
 	private String name;
+	
+	@JsonProperty
 	private String email;
 	
 	public boolean matchId(Long newId){
